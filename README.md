@@ -11,8 +11,9 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 3. Copy and paste a **short-cut** to the file in the SendTo folder.
 4. **NB** Right-click the newly created shortcut, click `Properties` and make sure the `Start in:` field is empty (clear what's in there if it isn't).
 5. For aesthetics, click on the `Change Icon...` button and find the included icon from this repo (optional).
-6. Rename the created shortcut from `rclone-GDrive.bat - Shortcut` to `rclone-GDrive` or to your personal preference (optional).
 6. Click Ok.
+7. Rename the created shortcut from `rclone-GDrive.bat - Shortcut` to `rclone-GDrive` or to your personal preference (optional).
+
 
 # Usage
 1. Locate a folder or file you would like to upload to GDrive.
