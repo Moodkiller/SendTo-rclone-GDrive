@@ -26,3 +26,5 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 
 
 ![alt text](https://i.imgur.com/GrQysuN.png "CMD Window with user inputs")
+
+![alt text](https://i.imgur.com/nBJpdCo.png "Completed confirmation with destination location")
