@@ -29,7 +29,7 @@ set /p transfers=Number of simultaneous transfers (1-15)?
 
 echo.
 REM full list of rclone options can be found in the offical documentatation https://rclone.org/docs/#options 
-%rclone% --config %config_file% copy --track-renames --verbose --ignore-existing --transfers %transfers% --checkers 10 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats-file-name-length 0 --stats 1s "%cd%" "gdrive:%destination%/%CurrDirName%"
+%rclone% --config %config_file% copy --verbose --ignore-existing --transfers %transfers% --checkers 10 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats-file-name-length 0 --stats 1s "%cd%" "gdrive:%destination%/%CurrDirName%"
 echo.
 echo [92mCheck this location for your file(s): My Drive/%destination%/%CurrDirName%[0m
 @pause
