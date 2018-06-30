@@ -18,5 +18,5 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 # Usage
 1. Locate a folder or file you would like to upload to GDrive.
 2. Right-click it and go to `Send to` > `rclone-GDrive` (or whatever name you may have given it). A CMD window should open. Note: This window will prepopulate with the **folders** in the root directory of your GDrive account.
-3. Follow the onscreen prompts and input the required details (destination upload directory, confrim and simultaneous transfers)
+3. Follow the onscreen prompts and input the required details (destination upload directory, confrimation and simultaneous transfers)
 4. ...
