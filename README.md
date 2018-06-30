@@ -22,4 +22,7 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 4. ...
 
 # Screenshots
+![atl text](https://i.imgur.com/Wez5EEN.png "Context Menu")
+
+
 ![alt text](https://i.imgur.com/GrQysuN.png "CMD Window with user inputs")
