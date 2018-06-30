@@ -22,4 +22,4 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 4. ...
 
 # Screenshots
-![alt text](url.png "Open file window")
+![alt text](https://i.imgur.com/GrQysuN.png "CMD Window with user inputs")
