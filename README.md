@@ -3,7 +3,7 @@ A simple .bat script to enable the user to Right-click on a folder or file and s
 
 # Prerequisites
 * Installed and configured Google Drive rclone setup (https://github.com/ncw/rclone)
-* Make sure `rclone.exe` is located in your `C:/Windows` directory. Alternativly, define the location [here](https://github.com/Moodkiller/SendTo-rclone-GDrive/blob/79ac564ab26a020aa98ce7d4d53969efd15a6270/rclone-GDrive.bat#L3) 
+* Make sure `rclone.exe` is located in your `C:/Windows` directory. Alternatively, define the location [here](https://github.com/Moodkiller/SendTo-rclone-GDrive/blob/79ac564ab26a020aa98ce7d4d53969efd15a6270/rclone-GDrive.bat#L3) 
 
 # Installation
 1. Download/save the .bat to any directory you choose.
