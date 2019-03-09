@@ -3,6 +3,13 @@ echo #########################################
 echo ## SendTo-rclone-gdrive v1.0		#
 echo #########################################
 
+REM Store the current working directories folder name in a variable 
+for %%I in (.) do (
+	set CurrDirName=%%~nxI
+)
+
+TITLE SendTo-rclone-gdrive v1.0 (%cd%)
+
 REM Define rclone and config file locations
 set rclone=rclone.exe
 set config_file=%userprofile%\.config\rclone\rclone.conf
@@ -23,7 +30,7 @@ echo Listing current FOLDERS on your remote (this will take a while if you have 
 
 REM Auto directory generation
 echo.
-set /p autodir=Do you want to use the current directory as a folder structure? [y/n]: 
+set /p autodir=Do you want to use the current directory (%CurrDirName%) as part of your folder structure? [y/n]: 
 if %autodir% == y goto autodir
 if not %autodir% == y goto manualdir
 
@@ -34,10 +41,6 @@ echo.
 goto :sanitycheck
 
 :Autodir
-REM Store the current working directories folder name in a variable 
-for %%I in (.) do (
-	set CurrDirName=%%~nxI
-)
 echo.
 echo Define the folder to upload your files into (on GDrive). 
 echo This can be in the format of just Folder or Folder/Folder2/etc.
@@ -105,4 +108,30 @@ REM Link... hopefully
 echo GDrive specific link:
 "%rclone%" link "gdrive:%destination%/%CurrDirName%
 echo.
+
+REM Generate .bat for one click next time use
+:makebat:
+>Upload.bat (
+echo @echo off
+echo TITLE rclone (%cd%^)
+
+echo echo rclone Version Details:
+echo "%rclone%" --version
+echo echo.
+echo echo Your Remote Stats:
+echo "%rclone%" about gdrive:/
+echo echo. 
+
+echo echo The files in this directory (%CurrDirName%^) will be uploaded to "%destination%/%CurrDirName%".
+echo set /p continue=Is this correct? [y/n] 
+echo if %%continue%%== y goto :rclone 
+echo if not %%continue%%== y goto :EOF
+echo echo.
+
+echo :rclone
+@echo "%rclone%" --config "%config_file%" copy %options% --exclude ~temp/** --progress --ignore-existing --transfers %transfers% --bwlimit %bwlimit% --checkers 10 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats-file-name-length 0 --stats 1s "%cd%" "gdrive:%destination%/%CurrDirName%"
+echo @pause
+echo :EOF
+)
+
 @pause
